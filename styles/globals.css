@@ -99,11 +99,12 @@ a {
 }
 
 .products-container{
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5em;
-  width: 100%;
+  width: 95%;
 }
 
 .products-heading h2{
@@ -147,7 +148,7 @@ a {
   background: var(--grad-gray);
   border-radius: 30px;
   line-height: 0.9;
-  width: 100%;
+  width: 95%;
   box-shadow: 10px 10px 0 var(--clr-acc1);
   display: flex;
   align-items: center;
@@ -205,8 +206,25 @@ a {
 }
 
 .hero-banner-image{
-  width: 520px;
+  width: 95%;
+  max-width: 520px;
   height: 520px;
+}
+
+.hero-banner-image:hover{
+  cursor: pointer;
+  animation-name: shaking;
+  animation-duration: 800ms;
+  animation-timing-function: ease-in-out
+}
+
+@keyframes shaking {
+  0% {transform: translateX(0)}
+  20% {transform: translateX(14px)}
+  40% {transform: translateX(-14px)}
+  60% {transform: translateX(7px)}
+  80% {transform: translateX(-7px)}
+  100% {transform: translateX(0)}
 }
 
 /* Footer Banner */
@@ -217,7 +235,7 @@ a {
   border-radius: 15px;
   color: white;
   margin: 5em auto;
-  width: 100%;
+  width: 95%;
   box-shadow: 8px 8px 0 var(--clr-acc1);
   display: flex;
   justify-content: space-between;
@@ -502,11 +520,12 @@ a {
 /* Slug */
 
 .product-detail-container{
+  width: 95%;
   padding: 3em;
   border-radius: 30px;
   display: flex;
   gap: 80px;
-  margin: 2em 1em;
+  margin: 2em auto;
   color: var(--clr-dark);
   background: rgb(226, 226, 226);
   box-shadow: 8px 8px 0 var(--clr-acc1);
@@ -673,9 +692,8 @@ a {
 .track {
   position: absolute;
   white-space: nowrap;
-  will-change: transform;
-  animation: marquee 15s linear infinite;
-  width: 150%;
+  animation: marquee 20s linear infinite;
+  width: 130%;
 }
 
 .track:hover {
@@ -683,8 +701,8 @@ a {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-60%); }
+  from { transform: translateX(100%); }
+  to { transform: translateX(-110%); }
 }
 
 /* Success */
@@ -740,12 +758,24 @@ a {
 
 /* Media */
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1050px) {
+
+  /* hero banner */
+
+  .hero-banner-container{
+    flex-wrap: wrap;
+    width: 95%;
+  }
+
+  .hero-banner-image{
+    margin: 3em auto 0;
+    width: 90%;
+    height: 90%;
+  }
 
   /* footer banner */
 
   .footer-banner-container{
-    width: 95%;
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -792,18 +822,6 @@ a {
 }
 
 @media screen and (max-width:880px) {
-
-  /* hero banner */
-
-  .hero-banner-container{
-    flex-wrap: wrap;
-    width: 95%;
-  }
-  .hero-banner-image{
-    margin: 3em auto 0;
-    width: 90%;
-    height: 90%;
-  }
 
   /* Slug */
 
@@ -859,9 +877,14 @@ a {
   .footer-banner-container .left h3:nth-of-type(2){
     margin: 0;
   }
+
+  .footer-banner-container p{
+    margin-top: 1em;
+  }
+
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:680px) {
 
   .hero-banner-container h3{
     font-size: 2rem;
@@ -880,7 +903,7 @@ a {
 
   .footer-banner-container .right h3,
   .footer-banner-container .left h3{
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
 
   .footer-banner-container .right p,
@@ -951,5 +974,25 @@ a {
 
   .cart-wrapper{
     width: 60%;
+  }
+}
+
+@media screen and (max-width:580px) {
+
+  /* hero banner */
+
+  .hero-banner-container{
+    padding: 2em;
+  }
+
+    /* footer banner */
+
+  .footer-banner-container{
+    padding: 2em;
+  }
+
+  .footer-banner-container .right h3,
+  .footer-banner-container .left h3{
+    font-size: 2rem;
   }
 }
