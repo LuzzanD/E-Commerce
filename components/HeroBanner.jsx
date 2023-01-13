@@ -24,7 +24,9 @@ const HeroBanner = ({product, heroBanner: {smallText, midText, largeText1, butto
           </Link>
         </div>
       </div>
-      <img src={urlFor(product.image[0])} className="hero-banner-image" alt="headphones"/>
+      <Link href={`/product/${product.slug.current}`}>
+        <img src={urlFor(product.image[0])} className="hero-banner-image" alt="headphones"/>
+      </Link>
     </div>
   )
 }
